@@ -49,9 +49,6 @@ public class Employe implements Serializable {
 	//@NotNull
 	private List<Departement> departements;
 	
-	@ManyToMany(mappedBy="employes",fetch=FetchType.EAGER )
-	private List<Logistique> logistique ;
-	
 	@JsonIgnore
 	//@JsonBackReference
 	@OneToOne(mappedBy="employe")
@@ -60,7 +57,13 @@ public class Employe implements Serializable {
 	@JsonIgnore
 	//@JsonBackReference
 	@OneToMany(mappedBy="employe")
+	private List<Logistique> logistique;
+	
+	@JsonIgnore
+	//@JsonBackReference
+	@OneToMany(mappedBy="employe")
 	private List<Timesheet> timesheets;
+	
 	
 	
 	public Employe() {
