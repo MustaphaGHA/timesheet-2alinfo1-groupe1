@@ -49,6 +49,9 @@ public class Employe implements Serializable {
 	//@NotNull
 	private List<Departement> departements;
 	
+	@ManyToMany(mappedBy="employes",fetch=FetchType.EAGER )
+	private List<Logistique> logistique ;
+	
 	@JsonIgnore
 	//@JsonBackReference
 	@OneToOne(mappedBy="employe")
@@ -163,6 +166,14 @@ public class Employe implements Serializable {
 	public void setDepartements(List<Departement> departement) {
 		this.departements = departement;
 	}
+	
+	public List<Logistique> getLogistique() {
+		return logistique;
+	}
+
+	public void setlogistique(List<Logistique> logistique) {
+		this.logistique = logistique;
+	}
 
 	public Contrat getContrat() {
 		return contrat;
@@ -184,7 +195,7 @@ public class Employe implements Serializable {
 	@Override
 	public String toString() {
 		return "Employe [id=" + id + ", prenom=" + prenom + ", nom=" + nom + ", email=" + email + ", password="
-				+ password + ", actif=" + actif + ", role=" + role + "]";
+				+ password + ", actif=" + actif +", logistique=" + logistique + ", role=" + role + "]";
 	}
 	
 	
