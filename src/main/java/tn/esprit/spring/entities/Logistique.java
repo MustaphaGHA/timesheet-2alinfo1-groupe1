@@ -9,10 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 public class Logistique implements Serializable {
-	private static final long serialVersionUID = -5369734855993305723L;
+
+	private static final long serialVersionUID = -1369702518850240341L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
