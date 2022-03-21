@@ -13,9 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import tn.esprit.spring.model.EmployeRequestModel;
 
 
 @Entity
@@ -101,6 +102,15 @@ public class Employe implements Serializable {
 		this.role = role;
 	}
 	
+	public Employe(EmployeRequestModel employee) {
+		this.nom = employee.getNomModel();
+		this.prenom = employee.getPrenomModel();
+		this.email = employee.getEmailModel();
+		this.actif = employee.isActifModel();
+		this.role = employee.getRoleModel();
+	}
+
+
 	public int getId() {
 		return id;
 	}

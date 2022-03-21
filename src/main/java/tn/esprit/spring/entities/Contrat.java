@@ -12,6 +12,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Pattern;
 
+import tn.esprit.spring.model.ContratRequestModel;
+
 @Entity
 public class Contrat implements Serializable {
 	
@@ -44,6 +46,12 @@ public class Contrat implements Serializable {
 		this.salaire = salaire;
 	}
 
+
+	public Contrat(ContratRequestModel contrat) {
+		this.dateDebut = contrat.getDateDebutModel();
+		this.typeContrat = contrat.getTypeContratModel();
+		this.salaire = contrat.getSalaireModel();
+	}
 
 	public Date getDateDebut() {
 		return dateDebut;
