@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import tn.esprit.spring.model.EntrepriseRequestModel;
 
 @Entity
 public class Entreprise implements Serializable{
@@ -44,6 +45,12 @@ public class Entreprise implements Serializable{
 		this.raisonSocial = raisonSocial;
 	}
 
+	public Entreprise(EntrepriseRequestModel entr) {
+		this.departements=entr.getDepartementsModel();
+		this.name=entr.getNameModel();
+		this.raisonSocial=entr.getRaisonSocialModel();
+		
+	}
 	public int getId() {
 		return id;
 	}
