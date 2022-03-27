@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
 public class Logistique implements Serializable {
@@ -20,9 +19,9 @@ public class Logistique implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	private String Label;
+	private String label;
 
-	private int Quantity;
+	private int quantity;
 
 	@ManyToOne
 	private Employe employe;
@@ -34,9 +33,9 @@ public class Logistique implements Serializable {
 		super();
 	}
 
-	public Logistique(String Label, int Quantity){
-		this.Label = Label;
-		this.Quantity = Quantity;
+	public Logistique(String label, int quantity){
+		this.label = label;
+		this.quantity = quantity;
 	}
 
 	public int getId() {
@@ -48,19 +47,19 @@ public class Logistique implements Serializable {
 	}
 
 	public String getLabel() {
-		return Label;
+		return label;
 	}
 
-	public void setLabel(String Label) {
-		this.Label = Label;
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
 	public int getQuantity() {
-		return Quantity;
+		return quantity;
 	}
 
-	public void setQuantity(int Quantity) {
-		this.Quantity = Quantity;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public Employe getemploye() {
