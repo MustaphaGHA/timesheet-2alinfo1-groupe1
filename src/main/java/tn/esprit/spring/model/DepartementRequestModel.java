@@ -1,9 +1,7 @@
-package tn.esprit.spring.entities;
+package tn.esprit.spring.model;
 
-import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,46 +11,24 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import tn.esprit.spring.model.DepartementRequestModel;
+import tn.esprit.spring.entities.Employe;
+import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.entities.Mission;
 
-
-@Entity
-public class Departement implements Serializable {
-
-	private static final long serialVersionUID = -357738161698377833L;
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+public class DepartementRequestModel {
+	
 	private int id;
 	
 	private String name;
 	
-	//@JsonManagedReference 
-	@JsonIgnore
-	@ManyToMany
+	
 	private List<Employe> employes;
 	
-	@OneToMany(mappedBy="departement")
+
 	private List<Mission> missions;
 	
-	@ManyToOne
 	private Entreprise entreprise;
 
-	public Departement(DepartementRequestModel department) {
-		this.name=department.getName();
-		this.employes = department.getEmployes();
-		this.entreprise=department.getEntreprise();
-		this.missions=department.getMissions();
-			
-	}
-	public Departement() {
-		super();
-	}
-	
-	public Departement(String name) {
-		this.name = name;
-	}
-	
 	public int getId() {
 		return id;
 	}
@@ -92,7 +68,6 @@ public class Departement implements Serializable {
 	public void setEntreprise(Entreprise entreprise) {
 		this.entreprise = entreprise;
 	}
-	
 	
 
 }
