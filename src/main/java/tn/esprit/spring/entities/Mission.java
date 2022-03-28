@@ -32,12 +32,16 @@ public class Mission implements Serializable {
 	public Mission() {
 		super();
 	}
-
+	
 	public Mission(String name, String description){
 		this.name = name;
 		this.description = description;
 	}
-	
+
+	public Mission(MissionRequestModel missionRequestModel) {
+		this.name = missionRequestModel.getName();
+		this.description= missionRequestModel.getDescription();
+	}
 
 	public int getId() {
 		return id;
