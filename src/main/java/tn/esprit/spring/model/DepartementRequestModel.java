@@ -29,6 +29,18 @@ public class DepartementRequestModel {
 	
 	private Entreprise entreprise;
 
+	
+
+	public DepartementRequestModel(int id, String name, List<Employe> employes, List<Mission> missions,
+			Entreprise entreprise) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.employes = employes;
+		this.missions = missions;
+		this.entreprise = entreprise;
+	}
+
 	public int getId() {
 		return id;
 	}
