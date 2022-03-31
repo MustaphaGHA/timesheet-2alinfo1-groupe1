@@ -2,6 +2,7 @@ package tn.esprit.spring.controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -20,17 +21,21 @@ public class ControllerEntrepriseImpl{
 	IEntrepriseService ientrepriseservice;
 	@Autowired
 	ITimesheetService itimesheetservice;
-
+	static final Logger l = Logger.getLogger(ControllerEmployeImpl.class);
+	
 	public int ajouterEntreprise(Entreprise ssiiConsulting) {
 		ientrepriseservice.ajouterEntreprise(ssiiConsulting);
+		l.info("Entreprise added Successfully");
 		return ssiiConsulting.getId();
 	}
 	public void affecterDepartementAEntreprise(int depId, int entrepriseId) {
 		ientrepriseservice.affecterDepartementAEntreprise(depId, entrepriseId);
+		l.info("DepartementService ajouté avec succes");
 	}
 	public void deleteEntrepriseById(int entrepriseId)
 	{
 		ientrepriseservice.deleteEntrepriseById(entrepriseId);
+		l.info("Entreprise supprimé avec succes");
 	}
 	public Entreprise getEntrepriseById() {
 
