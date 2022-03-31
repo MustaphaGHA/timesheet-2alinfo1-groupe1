@@ -27,7 +27,7 @@ import tn.esprit.spring.services.IEmployeService;
 @Join(path = "/", to = "/login.jsf")
 public class ControllerEmployeImpl {
 
-	final static Logger l = Logger.getLogger(ControllerEmployeImpl.class);
+	static final Logger l = Logger.getLogger(ControllerEmployeImpl.class);
 	private static final String LOGIN_REDIRECT_TRUE = "/login.xhtml?faces-redirect=true";
 
 	@Autowired
