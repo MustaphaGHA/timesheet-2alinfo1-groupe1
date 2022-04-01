@@ -59,6 +59,7 @@ public class ControllerEmployeImpl {
 			navigateTo = "/pages/admin/welcome.xhtml?faces-redirect=true";
 			loggedIn = true;
 			l.info("User " + login + " is Logged in");
+			l.debug("User Logged in ");
 		}
 
 		else {
