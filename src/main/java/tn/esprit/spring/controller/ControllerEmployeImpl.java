@@ -68,6 +68,7 @@ public class ControllerEmployeImpl {
 					"Login Failed: Please check your username/password and try again.");
 			FacesContext.getCurrentInstance().addMessage("form:btn", facesMessage);
 			l.error("Login Failed: Please check your username/password and try again!");
+			l.debug("Check full logs for further informations ");
 		}
 		return navigateTo;
 	}
